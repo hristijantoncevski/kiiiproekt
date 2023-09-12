@@ -1,0 +1,13 @@
+<div class="container">
+    <h1>Thank you for voting!</h1>
+    <h3>These are the results of the election</h3>
+    <div class="row text-center justify-content-center">
+        <th:block th:each="candidate: ${candidates}">
+            <div class="card m-1 p-1 border-primary text-center col-md-3">
+                <label>Name: <span th:text="${candidate.getName()}"></span></label>
+                <label>Party: <span th:text="${candidate.getParty()}"></span></label>
+                <label>Votes: <span th:text="${candidate.getNumberOfVotes()}"></span></label>
+            </div>
+        </th:block>
+    </div>
+</div>

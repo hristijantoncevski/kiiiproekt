@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form th:method="POST" th:action="@{'/election/{id}' (id=${candidate?.id})}">
+                <div>
+                    <label for="f1">Name and Surname</label>
+                    <input type="text"
+                           id="f1"
+                           name="name"
+                           th:value="${candidate?.name}"
+                           required>
+                </div>
+                <div>
+                    <label for="f2">Party</label>
+                    <input type="text"
+                           id="f2"
+                           name="party"
+                           th:value="${candidate?.party}"
+                           required>
+                </div>
+                <div>
+                    <label for="f3">Number of votes</label>
+                    <input type="number"
+                           id="f3"
+                           min="0"
+                           step="1"
+                           max="999999999"
+                           name="numberOfVotes"
+                           th:value="${candidate?.numberOfVotes}"
+                           required>
+                </div>
+                <button class="btn btn-success" id="submit" type="submit">Submit</button>
+                <a id="back" th:href="@{'/election/'}" type="button" class="btn btn-primary">Back to election</a>
+            </form>
+        </div>
+    </div>
+</div>
